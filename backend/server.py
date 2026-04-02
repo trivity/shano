@@ -32,10 +32,10 @@ class ContactSubmission(BaseModel):
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class ContactSubmissionCreate(BaseModel):
-    name: str
-    email: str
+    name: str = Field(..., min_length=1)
+    email: str = Field(..., min_length=1)
     phone: str = ""
-    message: str
+    message: str = Field(..., min_length=1)
 
 # Routes
 @api_router.get("/")
