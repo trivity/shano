@@ -1,0 +1,89 @@
+{
+  "theme": "light",
+  "archetype": "Swiss & High-Contrast (Archetype 4) - Adapted for Local Service",
+  "brand": {
+    "name": "Shano's Skips",
+    "contact": "0497 068 349",
+    "email": "shanosskips@outlook.com",
+    "address": "3 Osborne St, Port Augusta SA 5700",
+    "facebook": "https://www.facebook.com/profile.php?id=61581009062954"
+  },
+  "colors": {
+    "primary": "#bf0403",
+    "primary_hover": "#ff1420",
+    "background": "#FFFFFF",
+    "surface": "#F9FAFB",
+    "surface_alt": "#F3F4F6",
+    "text_primary": "#000000",
+    "text_secondary": "#4B5563",
+    "border": "#E5E7EB"
+  },
+  "typography": {
+    "heading_font": "Outfit",
+    "body_font": "Manrope",
+    "rules": [
+      "No Inter, Roboto, or generic AI sans-serifs.",
+      "Avoid all-caps for sentences. Use sentence case or Title Case for better readability.",
+      "Headings should be bold, highly legible, with tracking-tight spacing.",
+      "Ensure strong contrast for text over red backgrounds (use pure white text)."
+    ]
+  },
+  "layout_spacing": {
+    "rule": "Generous spacing. Use p-8, p-12 for containers to provide breathing room. Containers with borders must have internal padding.",
+    "grid_style": "Bento Grid for Services. Clear, defined boundaries. 1px borders with subtle shadow on hover.",
+    "hero_overlay": "bg-black/40 maximum. If the image isn't clear, use a solid color background instead of muddying the image."
+  },
+  "pages": {
+    "home": "Hero with strong CTA (Call/View Sizes), Services Overview (Grid with icons), Skip Bin Size teaser, Testimonials/Trust signals.",
+    "skip_bin_sizes": "Product representations using custom SVG/CSS of red Marrel bins (2m³, 3m³, 4m³, 6m³). Prominent 'Contact us for pricing' CTA on each bin card.",
+    "waste_guide": "Split view or clear dual lists: Do's (Green checks) vs Don'ts (Red crosses). Info on E-Waste and General Waste.",
+    "delivery_area": "Google Maps iframe (embedded for Port Augusta SA 5700) + Grid of tags/pills for towns (Port Augusta, Blanche Harbor, Miranda, Quorn, etc.).",
+    "about_us": "Story of being family-run, locally owned. Emphasize 'reliable, honest, affordable, eco-friendly'.",
+    "faq": "Shadcn accordion with 6 questions about paint, mattresses, hire duration, green waste, mixed waste, payments.",
+    "contact_us": "Contact form (Name, Email, Phone, Message) + Company contact info and Facebook link."
+  },
+  "components": {
+    "skip_bin_visual": {
+      "instructions": "Since there are no photos, build a React component using raw SVG (like an angled trapezoid/Marrel shape) or styled divs to represent a skip bin in the primary red (#bf0403). Size variations should be visually distinct (e.g., 2m³ is shorter, 6m³ is taller with a walk-in door represented).",
+      "required": true
+    },
+    "service_cards": {
+      "instructions": "Use lucide-react icons. Less words, more visual punch. E.g., a huge Wrench icon for 'Construction Waste'. Use standard Shadcn Card components but remove default heavy borders, adding a subtle 1px gray border and red hover accent."
+    },
+    "navigation": {
+      "instructions": "Sticky header, white background, black text. Primary phone number displayed prominently as a red CTA button."
+    }
+  },
+  "media": {
+    "hero_image": {
+      "url": "https://images.pexels.com/photos/35858960/pexels-photo-35858960.jpeg",
+      "alt": "Port Augusta expansive landscape",
+      "usage": "Main hero background overlay on the homepage or Delivery Area page."
+    },
+    "construction_worker": {
+      "url": "https://images.pexels.com/photos/8961401/pexels-photo-8961401.jpeg",
+      "alt": "Construction worker outdoors",
+      "usage": "Background or accent image for the Services section or Commercial skip hire section."
+    },
+    "recycling_waste": {
+      "url": "https://images.pexels.com/photos/12492301/pexels-photo-12492301.jpeg",
+      "alt": "Recycling materials area",
+      "usage": "Header image or side graphic for the Waste Guide page."
+    },
+    "renovation_house": {
+      "url": "https://images.pexels.com/photos/15798782/pexels-photo-15798782.jpeg",
+      "alt": "Red brick wall under construction",
+      "usage": "Background image for the Skip Bin Sizes header or residential hire section."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Install and use 'lucide-react' for all icons, as this will help visually communicate services without long text (e.g., icons for white goods, furniture, batteries, mattresses).",
+    "For the Skip Bin visualizations, DO NOT use external image URLs since the client has no photos. Code an inline SVG component that visually represents a trapezoid (Marrel) skip bin in red (#bf0403), adjusting height/width based on the size prop (2m³, 3m³, 4m³, 6m³).",
+    "Ensure 'Contact us for pricing' is displayed clearly on bin items instead of fixed prices.",
+    "Integrate a Google Maps iframe for Port Augusta (Address: 3 Osborne St, Port Augusta SA 5700) on the Delivery Area page.",
+    "Ensure all interactive elements have data-testid attributes for testing.",
+    "Build the contact form using Shadcn UI form components. Handle the submission with a mock toast notification (Sonner).",
+    "Keep typography simple and clean. Use Outfit for headings and Manrope for body text.",
+    "Focus on mobile responsiveness. The layout should look great on phones since many users will be tradies or homeowners on the go."
+  ]
+}
