@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   Trash2, Truck, Sofa, Battery, BedDouble, CircleDot,
-  Monitor, Home, Phone, ArrowRight, MapPin, CheckCircle2, Building2
+  Monitor, Home, Phone, ArrowRight, MapPin, CheckCircle2, Building2, DoorOpen, Leaf
 } from "lucide-react";
 import SkipBinSVG from "@/components/SkipBinSVG";
 
@@ -37,57 +37,104 @@ const trustPoints = [
 export default function HomePage() {
   return (
     <div data-testid="home-page">
-      {/* Hero Section */}
+      {/* Hero Section - Split Layout */}
       <section
         data-testid="hero-section"
-        className="relative min-h-[85vh] flex items-center"
-        style={{
-          background: `linear-gradient(135deg, #000000 0%, #1a0000 50%, #bf0403 100%)`,
-        }}
+        className="relative pt-20 bg-white overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 25% 50%, rgba(255,255,255,0.1) 0%, transparent 50%)',
-          }} />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-6 py-32 w-full">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8">
-              <MapPin size={14} className="text-[#ff1420]" />
-              <span className="text-white/90 text-sm font-medium">Serving Port Augusta & surrounds</span>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-center min-h-[85vh] py-16 lg:py-0">
+            {/* Left - Text */}
+            <div className="order-2 lg:order-1">
+              <div className="inline-flex items-center gap-2 bg-red-50 border border-red-100 rounded-full px-4 py-2 mb-8">
+                <MapPin size={14} className="text-[#bf0403]" />
+                <span className="text-[#bf0403] text-sm font-medium">Serving Port Augusta & surrounds</span>
+              </div>
+              <h1
+                data-testid="hero-title"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight"
+                style={{ fontFamily: 'Outfit' }}
+              >
+                Reliable skip bin hire you can
+                <span style={{ color: '#bf0403' }}> count on</span>
+              </h1>
+              <p className="mt-6 text-base lg:text-lg text-gray-500 leading-relaxed max-w-lg">
+                Family-owned waste management made simple. Fair pricing, honest service, and eco-friendly disposal.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-10">
+                <a href="tel:0497068349" data-testid="hero-call-btn">
+                  <Button
+                    size="lg"
+                    className="btn-red rounded-full text-base font-semibold px-8 py-6 flex items-center gap-2"
+                    style={{ backgroundColor: '#bf0403' }}
+                  >
+                    <Phone size={18} />
+                    Call Now
+                  </Button>
+                </a>
+                <Link to="/skip-bin-sizes" data-testid="hero-sizes-btn">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full text-base font-semibold px-8 py-6 border-gray-300 text-black hover:bg-gray-50 flex items-center gap-2"
+                  >
+                    View Bin Sizes
+                    <ArrowRight size={18} />
+                  </Button>
+                </Link>
+              </div>
+              {/* Quick trust points */}
+              <div className="flex flex-wrap gap-x-6 gap-y-2 mt-10">
+                {["Open 7 days", "No hidden costs", "Walk-in door bins"].map((t) => (
+                  <div key={t} className="flex items-center gap-2 text-sm text-gray-400">
+                    <CheckCircle2 size={14} className="text-[#bf0403]" />
+                    <span>{t}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-            <h1
-              data-testid="hero-title"
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
-              style={{ fontFamily: 'Outfit' }}
-            >
-              Reliable skip bin hire you can
-              <span style={{ color: '#ff1420' }}> count on</span>
-            </h1>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed max-w-lg">
-              Family-owned waste management made simple. Fair pricing, honest service, and eco-friendly disposal.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-10">
-              <a href="tel:0497068349" data-testid="hero-call-btn">
-                <Button
-                  size="lg"
-                  className="btn-red rounded-full text-base font-semibold px-8 py-6 flex items-center gap-2"
-                  style={{ backgroundColor: '#bf0403' }}
-                >
-                  <Phone size={18} />
-                  Call Now
-                </Button>
-              </a>
-              <Link to="/skip-bin-sizes" data-testid="hero-sizes-btn">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full text-base font-semibold px-8 py-6 border-white/30 text-white hover:bg-white/10 hover:text-white flex items-center gap-2"
-                >
-                  View Bin Sizes
-                  <ArrowRight size={18} />
-                </Button>
-              </Link>
+
+            {/* Right - Skip Bin Visual */}
+            <div className="order-1 lg:order-2 flex items-center justify-center relative">
+              {/* Background pattern */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-[420px] h-[420px] lg:w-[500px] lg:h-[500px] rounded-full" style={{
+                  background: 'radial-gradient(circle, rgba(191,4,3,0.06) 0%, rgba(191,4,3,0.02) 50%, transparent 70%)',
+                }} />
+              </div>
+              {/* Decorative dots */}
+              <div className="absolute top-12 right-8 hidden lg:grid grid-cols-5 gap-2 opacity-20">
+                {Array.from({ length: 25 }).map((_, i) => (
+                  <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#bf0403]" />
+                ))}
+              </div>
+              {/* Main bin SVG */}
+              <div className="relative z-10 w-full max-w-md">
+                <SkipBinSVG size="6" className="w-full drop-shadow-xl" />
+                {/* Size badge */}
+                <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-black text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg" style={{ fontFamily: 'Outfit' }}>
+                  <span>2m&#179; &ndash; 6m&#179; available</span>
+                </div>
+              </div>
+              {/* Floating feature badges */}
+              <div className="absolute top-1/4 -left-2 lg:left-0 bg-white shadow-lg border border-gray-100 rounded-xl px-4 py-3 flex items-center gap-3 z-20">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#FEE2E2' }}>
+                  <DoorOpen size={18} className="text-[#bf0403]" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold" style={{ fontFamily: 'Outfit' }}>Walk-in doors</p>
+                  <p className="text-[11px] text-gray-400">Easy loading access</p>
+                </div>
+              </div>
+              <div className="absolute bottom-1/4 -right-2 lg:right-0 bg-white shadow-lg border border-gray-100 rounded-xl px-4 py-3 flex items-center gap-3 z-20">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#DCFCE7' }}>
+                  <Leaf size={18} className="text-green-600" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold" style={{ fontFamily: 'Outfit' }}>Eco-friendly</p>
+                  <p className="text-[11px] text-gray-400">Responsible disposal</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
