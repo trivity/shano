@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "sonner"
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/StructuredData";
 import HomePage from "@/pages/HomePage";
 import SkipBinSizesPage from "@/pages/SkipBinSizesPage";
 import WasteGuidePage from "@/pages/WasteGuidePage";
@@ -25,6 +26,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
+        <StructuredData />
         <Navbar />
         <main className="flex-1">
           <Routes>

@@ -6,6 +6,7 @@ import {
   Monitor, Home, Phone, ArrowRight, MapPin, CheckCircle2, Building2, DoorOpen, Leaf
 } from "lucide-react";
 import SkipBinSVG from "@/components/SkipBinSVG";
+import SEO from "@/components/SEO";
 
 const services = [
   { icon: Trash2, title: "Skip Bin Hire", desc: "2m\u00b3 to 6m\u00b3 sizes with walk-in doors" },
@@ -37,6 +38,10 @@ const trustPoints = [
 export default function HomePage() {
   return (
     <div data-testid="home-page">
+      <SEO
+        description="Shano's Skips - Locally owned skip bin hire in Port Augusta, SA. 2m³ to 6m³ bins with walk-in doors. Reliable, affordable, eco-friendly waste management. Open 7 days."
+        path="/"
+      />
       {/* Hero Section - Split Layout */}
       <section
         data-testid="hero-section"

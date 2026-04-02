@@ -1,5 +1,6 @@
 import React from "react";
 import { Heart, Leaf, Clock, Shield, Users, ThumbsUp } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const values = [
   { icon: Heart, title: "Family-run", desc: "Locally owned and operated with a genuine personal touch." },
@@ -13,6 +14,11 @@ const values = [
 export default function AboutUsPage() {
   return (
     <div data-testid="about-page" className="pt-20">
+      <SEO
+        title="About Us"
+        description="Shano's Skips is a locally owned, family-run skip bin business in Port Augusta. Reliable, honest, affordable, eco-friendly waste management."
+        path="/about"
+      />
       {/* Header */}
       <section className="bg-black text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">

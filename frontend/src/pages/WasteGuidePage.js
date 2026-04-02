@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckCircle2, XCircle, AlertTriangle, Monitor, Trash2, Leaf } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const allowed = [
   "General household waste",
@@ -26,6 +27,11 @@ const notAllowed = [
 export default function WasteGuidePage() {
   return (
     <div data-testid="waste-guide-page" className="pt-20">
+      <SEO
+        title="Waste Guide"
+        description="What can and can't go in your skip bin. E-waste, green waste, and general waste guidelines from Shano's Skips in Port Augusta."
+        path="/waste-guide"
+      />
       {/* Header */}
       <section className="bg-black text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">

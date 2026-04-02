@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Phone, Mail, MapPin, Facebook, Send, Loader2 } from "lucide-react";
 import axios from "axios";
+import SEO from "@/components/SEO";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
@@ -38,6 +39,11 @@ export default function ContactUsPage() {
 
   return (
     <div data-testid="contact-page" className="pt-20">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Shano's Skips for skip bin hire in Port Augusta. Call 0497 068 349 or send us a message. Open 7 days a week."
+        path="/contact"
+      />
       {/* Header */}
       <section className="bg-black text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">

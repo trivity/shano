@@ -1,8 +1,10 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const faqs = [
   {
@@ -31,9 +33,32 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a,
+    },
+  })),
+};
+
 export default function FAQPage() {
   return (
     <div data-testid="faq-page" className="pt-20">
+      <SEO
+        title="FAQ"
+        description="Frequently asked questions about Shano's Skips bin hire in Port Augusta. Learn about what you can put in bins, hire duration, and payment methods."
+        path="/faq"
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
       {/* Header */}
       <section className="bg-black text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">

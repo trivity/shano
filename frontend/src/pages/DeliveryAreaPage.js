@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const towns = [
   "Port Augusta",
@@ -17,6 +18,11 @@ const towns = [
 export default function DeliveryAreaPage() {
   return (
     <div data-testid="delivery-area-page" className="pt-20">
+      <SEO
+        title="Delivery Area"
+        description="Shano's Skips delivers to Port Augusta, Quorn, Wilmington, Booleroo, Iron Knob, Pimba, Woomera, Hawker and surrounding areas in South Australia."
+        path="/delivery-area"
+      />
       {/* Header */}
       <section className="bg-black text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">

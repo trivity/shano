@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, DoorOpen, ArrowRight } from "lucide-react";
 import SkipBinSVG from "@/components/SkipBinSVG";
+import SEO from "@/components/SEO";
 
 const bins = [
   {
@@ -39,6 +40,11 @@ const bins = [
 export default function SkipBinSizesPage() {
   return (
     <div data-testid="skip-bin-sizes-page" className="pt-20">
+      <SEO
+        title="Skip Bin Sizes"
+        description="Choose from 2m³, 3m³, 4m³, and 6m³ skip bins with walk-in doors. Perfect for home clean-ups, renovations, and commercial jobs in Port Augusta."
+        path="/skip-bin-sizes"
+      />
       {/* Header */}
       <section className="bg-black text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
