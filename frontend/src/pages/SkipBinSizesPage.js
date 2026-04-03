@@ -46,8 +46,9 @@ export default function SkipBinSizesPage() {
         path="/skip-bin-sizes"
       />
       {/* Header */}
-      <section className="bg-black text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative bg-black text-white py-16 lg:py-24 overflow-hidden">
+        <img src="/images/truck-bins-stacked.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <span className="text-[#ff1420] text-sm font-semibold uppercase tracking-wider">Our products</span>
           <h1
             data-testid="skip-sizes-title"
@@ -56,7 +57,7 @@ export default function SkipBinSizesPage() {
           >
             Skip bin sizes
           </h1>
-          <p className="mt-4 text-gray-400 max-w-xl text-base lg:text-lg">
+          <p className="mt-4 text-gray-300 max-w-xl text-base lg:text-lg">
             We offer a range of skip bin sizes to suit your needs. All of our skip bins are fitted with walk-in doors, making it easy to load your waste.
           </p>
         </div>

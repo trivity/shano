@@ -20,8 +20,9 @@ export default function AboutUsPage() {
         path="/about"
       />
       {/* Header */}
-      <section className="bg-black text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative bg-black text-white py-16 lg:py-24 overflow-hidden">
+        <img src="/images/truck-hero-gmb.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <span className="text-[#ff1420] text-sm font-semibold uppercase tracking-wider">About us</span>
           <h1
             data-testid="about-title"
@@ -35,17 +36,43 @@ export default function AboutUsPage() {
 
       {/* Story */}
       <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-600 leading-relaxed text-base lg:text-lg" data-testid="about-story">
-              Shano's Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way - offering honest advice, fair pricing, and a helping hand when you need it.
-            </p>
-            <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
-              Whether you're tackling a home clean-up, renovation, or clearing a deceased estate, we make the process simple and stress-free. Our skip bins come in a range of sizes and feature easy-access walk-in doors for added convenience. We also take a responsible approach to waste disposal, with a strong focus on sustainability and environmentally friendly practices.
-            </p>
-            <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
-              We offer flexible 5-day skip hire with extensions available if needed, along with affordable pricing and no hidden costs - so you always know exactly what you're getting. We're committed to responsible, eco-friendly waste disposal and are open 7 days a week, providing dependable service with a genuine local touch.
-            </p>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-gray-600 leading-relaxed text-base lg:text-lg" data-testid="about-story">
+                Shano's Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way - offering honest advice, fair pricing, and a helping hand when you need it.
+              </p>
+              <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
+                Whether you're tackling a home clean-up, renovation, or clearing a deceased estate, we make the process simple and stress-free. Our skip bins come in a range of sizes and feature easy-access walk-in doors for added convenience. We also take a responsible approach to waste disposal, with a strong focus on sustainability and environmentally friendly practices.
+              </p>
+              <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
+                We offer flexible 5-day skip hire with extensions available if needed, along with affordable pricing and no hidden costs - so you always know exactly what you're getting. We're committed to responsible, eco-friendly waste disposal and are open 7 days a week, providing dependable service with a genuine local touch.
+              </p>
+            </div>
+            <div className="relative">
+              <img
+                src="/images/truck-hero-gmb.jpg"
+                alt="Shano's Skips truck delivering a skip bin"
+                className="w-full rounded-xl shadow-lg object-cover aspect-[4/3]"
+                data-testid="about-main-image"
+              />
+              <div className="absolute -bottom-4 -left-4 bg-[#bf0403] text-white rounded-xl px-6 py-4 shadow-lg hidden sm:block">
+                <p className="text-2xl font-bold" style={{ fontFamily: 'Outfit' }}>7 days</p>
+                <p className="text-sm opacity-90">a week service</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4" data-testid="about-gallery">
+            <img src="/images/bin-near-shed.jpg" alt="Skip bin near shed" className="w-full h-48 md:h-56 object-cover rounded-lg" />
+            <img src="/images/bin-at-site.jpg" alt="Skip bin delivery at site" className="w-full h-48 md:h-56 object-cover rounded-lg" />
+            <img src="/images/truck-lifting-bin.jpg" alt="Truck lifting skip bin" className="w-full h-48 md:h-56 object-cover rounded-lg" />
+            <img src="/images/bin-delivery-palm.jpg" alt="Skip bin delivery" className="w-full h-48 md:h-56 object-cover rounded-lg" />
           </div>
         </div>
       </section>

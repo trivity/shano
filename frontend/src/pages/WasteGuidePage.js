@@ -33,8 +33,9 @@ export default function WasteGuidePage() {
         path="/waste-guide"
       />
       {/* Header */}
-      <section className="bg-black text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative bg-black text-white py-16 lg:py-24 overflow-hidden">
+        <img src="/images/bin-house-full.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <span className="text-[#ff1420] text-sm font-semibold uppercase tracking-wider">Waste guide</span>
           <h1
             data-testid="waste-guide-title"
@@ -43,7 +44,7 @@ export default function WasteGuidePage() {
           >
             What can go in your skip bin
           </h1>
-          <p className="mt-4 text-gray-400 max-w-xl text-base lg:text-lg">
+          <p className="mt-4 text-gray-300 max-w-xl text-base lg:text-lg">
             To ensure safe and responsible waste disposal, please follow these guidelines.
           </p>
         </div>
@@ -88,6 +89,17 @@ export default function WasteGuidePage() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Real Photos Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <img src="/images/bin-waste-closeup.jpg" alt="Loaded skip bin example" className="w-full h-64 object-cover rounded-xl" />
+            <img src="/images/bin-blue-waste.jpg" alt="Mixed waste in skip bin" className="w-full h-64 object-cover rounded-xl" />
+            <img src="/images/bin-wall-site.jpg" alt="Skip bin at work site" className="w-full h-64 object-cover rounded-xl" />
           </div>
         </div>
       </section>

@@ -24,8 +24,9 @@ export default function DeliveryAreaPage() {
         path="/delivery-area"
       />
       {/* Header */}
-      <section className="bg-black text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative bg-black text-white py-16 lg:py-24 overflow-hidden">
+        <img src="/images/truck-driveway.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <span className="text-[#ff1420] text-sm font-semibold uppercase tracking-wider">Service area</span>
           <h1
             data-testid="delivery-area-title"
@@ -34,7 +35,7 @@ export default function DeliveryAreaPage() {
           >
             Delivery area
           </h1>
-          <p className="mt-4 text-gray-400 max-w-xl text-base lg:text-lg">
+          <p className="mt-4 text-gray-300 max-w-xl text-base lg:text-lg">
             We proudly service Port Augusta and surrounding areas in the Great Upper North South Australia.
           </p>
         </div>

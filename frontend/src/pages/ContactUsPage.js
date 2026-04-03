@@ -45,8 +45,9 @@ export default function ContactUsPage() {
         path="/contact"
       />
       {/* Header */}
-      <section className="bg-black text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="relative bg-black text-white py-16 lg:py-24 overflow-hidden">
+        <img src="/images/truck-bin-sky.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="relative max-w-7xl mx-auto px-6">
           <span className="text-[#ff1420] text-sm font-semibold uppercase tracking-wider">Get in touch</span>
           <h1
             data-testid="contact-title"
@@ -55,7 +56,7 @@ export default function ContactUsPage() {
           >
             Contact us
           </h1>
-          <p className="mt-4 text-gray-400 max-w-xl text-base lg:text-lg">
+          <p className="mt-4 text-gray-300 max-w-xl text-base lg:text-lg">
             Have a question or ready to book a skip? Get in touch and we'll get back to you as soon as possible.
           </p>
         </div>
