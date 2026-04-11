@@ -60,8 +60,8 @@ export default function HomePage() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight tracking-tight"
                 style={{ fontFamily: 'Outfit' }}
               >
-                Reliable skip bin hire you can
-                <span style={{ color: '#bf0403' }}> count on</span>
+                Shano's Skips —
+                <span style={{ color: '#bf0403' }}> Reliable Skip Bin Hire</span>
               </h1>
               <p className="mt-6 text-base lg:text-lg text-gray-500 leading-relaxed max-w-lg">
                 Family-owned waste management made simple. Fair pricing, honest service, and eco-friendly disposal.
@@ -151,12 +151,17 @@ export default function HomePage() {
       </section>
 
       {/* Trust Points Bar */}
-      <section className="bg-[#bf0403] py-5 overflow-hidden">
+      <section className="bg-[#bf0403] py-8 lg:py-10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+          <div className="flex flex-wrap justify-center gap-x-16 gap-y-6">
             {trustPoints.map((point) => (
-              <div key={point} className="flex items-center gap-2 text-white text-sm font-medium">
-                <CheckCircle2 size={16} className="shrink-0" />
+              <div
+                key={point}
+                className="flex items-center gap-3 text-white text-base lg:text-lg font-semibold group cursor-default transition-transform hover:scale-105"
+              >
+                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                  <CheckCircle2 size={18} className="shrink-0" />
+                </div>
                 <span>{point}</span>
               </div>
             ))}
