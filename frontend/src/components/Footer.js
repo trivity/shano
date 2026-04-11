@@ -80,7 +80,15 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-xs">
-            &copy; {new Date().getFullYear()} Shano's Skips. All rights reserved.
+            &copy; {new Date().getFullYear()} Shano's Skips. All rights reserved. Powered by{' '}
+            <a
+              href="https://simplifyyourbusiness.au"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors underline"
+            >
+              Simplify Your Business
+            </a>
           </p>
           <button
             onClick={scrollToTop}

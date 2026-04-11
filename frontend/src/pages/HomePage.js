@@ -196,12 +196,6 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
-            <div className="inline-flex items-center gap-2 text-sm text-gray-500">
-              <Building2 size={16} />
-              <span>We service both residential and commercial clients</span>
-            </div>
-          </div>
         </div>
       </section>
 
