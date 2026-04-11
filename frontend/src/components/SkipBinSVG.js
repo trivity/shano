@@ -106,21 +106,21 @@ export default function SkipBinSVG({ size = "4", className = "" }) {
         {/* Door frame top edge */}
         <line x1="22" y1="145" x2="68" y2="155" stroke={INSIDE} strokeWidth="1.5" />
 
-        {/* Door panel (hinged at top, swung outward/downward ~45deg) */}
+        {/* Door panel (hinged at top, swung outward, resting on ground) */}
         <polygon
-          points="22,145 68,155 30,190 -18,178"
+          points="22,145 68,155 38,235 -12,218"
           fill={MID}
           stroke={DARK}
           strokeWidth="1"
         />
         {/* Door panel bottom edge (thickness) */}
         <polygon
-          points="-18,178 30,190 30,195 -18,183"
+          points="-12,218 38,235 38,238 -12,221"
           fill={DARKER}
         />
         {/* Door panel subtle highlight */}
         <polygon
-          points="22,145 68,155 30,190 -18,178"
+          points="22,145 68,155 38,235 -12,218"
           fill="rgba(255,255,255,0.06)"
         />
 
@@ -159,18 +159,7 @@ export default function SkipBinSVG({ size = "4", className = "" }) {
         <line x1="75" y1="225" x2="55" y2="88" stroke={DARK} strokeWidth="1" opacity="0.4" />
       </g>
 
-      {/* Size label */}
-      <text
-        x="160"
-        y="272"
-        textAnchor="middle"
-        fill="#4B5563"
-        fontFamily="Outfit, sans-serif"
-        fontWeight="600"
-        fontSize="14"
-      >
-        {label}
-      </text>
+      {/* No size label on icon */}
     </svg>
   );
 }
