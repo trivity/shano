@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Phone, DoorOpen, ArrowRight } from "lucide-react";
+import { Phone, DoorOpen, ArrowRight, Heart, Shield, ThumbsUp, Leaf, Clock, Users } from "lucide-react";
 import SkipBinSVG from "@/components/SkipBinSVG";
 import SEO from "@/components/SEO";
 
@@ -112,7 +112,7 @@ export default function SkipBinSizesPage() {
                             style={{ backgroundColor: '#bf0403' }}
                           >
                             <Phone size={15} />
-                            Contact us for pricing
+                            Get a Quote
                           </Button>
                         </a>
                       </div>
@@ -125,10 +125,43 @@ export default function SkipBinSizesPage() {
         </div>
       </section>
 
+      {/* Company Values */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#bf0403] text-sm font-semibold uppercase tracking-wider">Our values</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: 'Outfit' }}>
+              What we stand for
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Heart, title: "Family-run", desc: "Locally owned and operated with a genuine personal touch." },
+              { icon: Shield, title: "Reliable", desc: "Dependable service you can count on, 7 days a week." },
+              { icon: ThumbsUp, title: "Honest", desc: "Fair pricing, honest advice, and no hidden costs." },
+              { icon: Leaf, title: "Eco-friendly", desc: "Committed to responsible, sustainable waste disposal." },
+              { icon: Clock, title: "Flexible", desc: "5-day hire with extensions available when you need them." },
+              { icon: Users, title: "Community-focused", desc: "Proudly serving Port Augusta and the Upper North." },
+            ].map((val) => (
+              <div
+                key={val.title}
+                className="bg-white rounded-xl p-8 border border-gray-100 hover:border-[#bf0403] transition-colors"
+              >
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FEE2E2' }}>
+                  <val.icon size={22} className="text-[#bf0403]" />
+                </div>
+                <h3 className="font-bold text-base mb-2" style={{ fontFamily: 'Outfit' }}>{val.title}</h3>
+                <p className="text-gray-500 text-sm">{val.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Info Banner */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h3 className="text-xl font-bold mb-3" style={{ fontFamily: 'Outfit' }}>Flexible hire terms</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-3" style={{ fontFamily: 'Outfit' }}>Flexible hire terms</h3>
           <p className="text-gray-500">
             We offer flexible 5-day skip hire with extensions available if needed. No hidden costs - you always know exactly what you're getting.
           </p>
