@@ -18,12 +18,12 @@ export default function SkipBinSVG({ size = "4", className = "" }) {
   const profile = binProfiles[size] || binProfiles["4"];
   const { scale, label } = profile;
 
-  const ox = 160 - 150 * scale;
-  const oy = 252 - 210 * scale;
+  const ox = 155 - 148 * scale;
+  const oy = 248 - 215 * scale;
 
   return (
     <svg
-      viewBox="0 0 320 280"
+      viewBox="0 0 320 270"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-label={`${label} Marrel Skip Bin`}
@@ -41,125 +41,131 @@ export default function SkipBinSVG({ size = "4", className = "" }) {
 
       <g transform={`translate(${ox}, ${oy}) scale(${scale})`}>
         {/* Ground shadow */}
-        <ellipse cx="170" cy="237" rx="130" ry="14" fill="rgba(0,0,0,0.06)" />
+        <ellipse cx="175" cy="232" rx="128" ry="12" fill="rgba(0,0,0,0.06)" />
 
-        {/* ====== LEFT END FACE (short side, where door is) ====== */}
+        {/* ====== FRONT FACE (long side, nearly straight-on) ====== */}
+        {/* Trapezoid: narrower at bottom, wider at top (skip bin shape) */}
         <polygon
-          points="75,225 55,88 10,75 25,205"
-          fill={`url(#ge-${size})`}
-        />
-
-        {/* ====== FRONT FACE (long side) ====== */}
-        <polygon
-          points="75,225 270,225 285,88 55,88"
+          points="88,228 278,228 295,82 68,82"
           fill={`url(#gf-${size})`}
         />
 
-        {/* ====== TOP RIM ====== */}
-
-        {/* Front rim - outer face */}
+        {/* ====== LEFT END FACE (short side, subtle angle) ====== */}
         <polygon
-          points="55,88 285,88 288,78 52,78"
+          points="88,228 68,82 42,78 58,222"
+          fill={`url(#ge-${size})`}
+        />
+
+        {/* Vertical reinforcement channel on end face */}
+        <line x1="63" y1="222" x2="48" y2="80" stroke={DARKER} strokeWidth="3" opacity="0.4" />
+        <line x1="76" y1="226" x2="58" y2="81" stroke={DARKER} strokeWidth="3" opacity="0.3" />
+
+        {/* ====== TOP RIM (thick raised lip) ====== */}
+
+        {/* Front rim outer face */}
+        <polygon
+          points="68,82 295,82 298,72 65,72"
           fill={LIGHT}
         />
 
-        {/* Left end rim - outer face */}
+        {/* Left end rim outer face */}
         <polygon
-          points="55,88 10,75 7,66 52,78"
+          points="68,82 42,78 39,69 65,72"
           fill={MID}
         />
 
         {/* Rim top surface */}
         <polygon
-          points="52,78 288,78 250,66 7,66"
+          points="65,72 298,72 268,62 39,69"
           fill={MAIN}
         />
 
-        {/* ====== INTERIOR (visible from top) ====== */}
+        {/* ====== INTERIOR visible from top ====== */}
         <polygon
-          points="60,88 280,88 250,66 15,66"
+          points="72,82 290,82 268,62 46,69"
           fill={INSIDE}
         />
-        <polygon
-          points="60,88 280,88 260,78 20,75"
-          fill={DARKER}
-          opacity="0.6"
-        />
 
-        {/* ====== RIVETS on front face (4 round bolts below rim) ====== */}
-        {[105, 145, 190, 235].map((cx, i) => (
+        {/* ====== RIVETS on front face below rim (4 bolts) ====== */}
+        {[115, 160, 205, 250].map((cx, i) => (
           <g key={`r-${i}`}>
-            <circle cx={cx} cy="89" r="6.5" fill={LIGHT} />
-            <circle cx={cx} cy="89" r="5" fill={MAIN} />
-            <circle cx={cx - 1.5} cy={87.5} r="2" fill="rgba(255,255,255,0.3)" />
+            <circle cx={cx} cy="83" r="6" fill={LIGHT} />
+            <circle cx={cx} cy="83" r="4.5" fill={MAIN} />
+            <circle cx={cx - 1} cy={81.5} r="1.5" fill="rgba(255,255,255,0.35)" />
           </g>
         ))}
 
-        {/* ====== DOOR on LEFT END (swings outward from end face) ====== */}
+        {/* ====== DOOR on LEFT END ====== */}
+        {/* The door is on the end face, hinged at mid-height, swung down to lay flat on ground */}
 
-        {/* Door opening / cutout on left end face */}
+        {/* Door opening (dark hole in end face) */}
         <polygon
-          points="75,225 25,205 22,145 68,155"
+          points="88,228 58,222 54,148 84,150"
           fill={DARKER}
-          opacity="0.7"
+          opacity="0.75"
         />
-        {/* Door frame top edge */}
-        <line x1="22" y1="145" x2="68" y2="155" stroke={INSIDE} strokeWidth="1.5" />
+        {/* Door opening top frame line */}
+        <line x1="54" y1="148" x2="84" y2="150" stroke={INSIDE} strokeWidth="2" />
 
-        {/* Door panel (hinged at top, swung outward, resting on ground) */}
+        {/* Door panel - laying nearly flat on ground like a ramp */}
+        {/* Hinged at the opening top, rests on ground extending outward */}
         <polygon
-          points="22,145 68,155 38,235 -12,218"
+          points="54,148 84,150 55,232 22,228"
           fill={MID}
           stroke={DARK}
           strokeWidth="1"
         />
-        {/* Door panel bottom edge (thickness) */}
+
+        {/* Door panel top surface (thickness visible since it's nearly flat) */}
         <polygon
-          points="-12,218 38,235 38,238 -12,221"
-          fill={DARKER}
+          points="22,228 55,232 55,226 22,222"
+          fill={MAIN}
         />
-        {/* Door panel subtle highlight */}
+        {/* Door front edge (thickness) */}
         <polygon
-          points="22,145 68,155 38,235 -12,218"
-          fill="rgba(255,255,255,0.06)"
+          points="22,222 22,228 55,232 55,226"
+          fill={DARK}
+        />
+
+        {/* Door highlight */}
+        <polygon
+          points="54,148 84,150 55,226 22,222"
+          fill="rgba(255,255,255,0.05)"
         />
 
         {/* ====== BRANDING on front face ====== */}
         <text
-          x="172"
-          y="157"
+          x="183"
+          y="155"
           textAnchor="middle"
           fill="white"
           fontFamily="Outfit, sans-serif"
           fontWeight="800"
-          fontSize="21"
+          fontSize="20"
           opacity="0.95"
         >
           Shano's
         </text>
         <text
-          x="172"
-          y="181"
+          x="183"
+          y="178"
           textAnchor="middle"
           fill="white"
           fontFamily="Outfit, sans-serif"
           fontWeight="800"
-          fontSize="18"
+          fontSize="17"
           opacity="0.95"
         >
           Skips
         </text>
 
-        {/* ====== EDGES ====== */}
-        {/* Front bottom */}
-        <line x1="75" y1="225" x2="270" y2="225" stroke={DARK} strokeWidth="1.5" />
-        {/* Left bottom */}
-        <line x1="25" y1="205" x2="75" y2="225" stroke={DARKER} strokeWidth="1.5" />
-        {/* Front-left corner vertical */}
-        <line x1="75" y1="225" x2="55" y2="88" stroke={DARK} strokeWidth="1" opacity="0.4" />
+        {/* ====== EDGE LINES ====== */}
+        <line x1="88" y1="228" x2="278" y2="228" stroke={DARK} strokeWidth="1.5" />
+        <line x1="58" y1="222" x2="88" y2="228" stroke={DARKER} strokeWidth="1.5" />
+        <line x1="88" y1="228" x2="68" y2="82" stroke={DARK} strokeWidth="1" opacity="0.35" />
       </g>
 
-      {/* No size label on icon */}
+      {/* No size label on SVG */}
     </svg>
   );
 }
