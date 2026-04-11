@@ -40,13 +40,13 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg" data-testid="about-story">
-                Shano's Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way - offering honest advice, fair pricing, and a helping hand when you need it.
+                Shane's Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way — offering honest advice, fair pricing, and a helping hand when you need it.
               </p>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
                 Whether you're tackling a home clean-up, renovation, or clearing a deceased estate, we make the process simple and stress-free. Our skip bins come in a range of sizes and feature easy-access walk-in doors for added convenience. We also take a responsible approach to waste disposal, with a strong focus on sustainability and environmentally friendly practices.
               </p>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
-                We offer flexible 5-day skip hire with extensions available if needed, along with affordable pricing and no hidden costs - so you always know exactly what you're getting. We're committed to responsible, eco-friendly waste disposal and are open 7 days a week, providing dependable service with a genuine local touch.
+                We offer flexible 5-day skip hire with extensions available if needed, along with affordable pricing and no hidden costs — so you always know exactly what you're getting. We're committed to responsible, eco-friendly waste disposal and are open 7 days a week, providing dependable service with a genuine local touch.
               </p>
             </div>
             <div className="relative">
@@ -74,6 +74,25 @@ export default function AboutUsPage() {
             <img src="/images/truck-lifting-bin.jpg" alt="Truck lifting skip bin" className="w-full h-48 md:h-56 object-cover rounded-lg" />
             <img src="/images/bin-delivery-palm.jpg" alt="Skip bin delivery" className="w-full h-48 md:h-56 object-cover rounded-lg" />
           </div>
+          {/* CTA below gallery */}
+          <div className="mt-12 p-8 bg-gray-50 rounded-xl border border-gray-100 text-center">
+            <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto">
+              Not sure what bin you need or whether an item is allowed? Call us before loading and we'll point you in the right direction.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <a href="tel:0497068349">
+                <Button className="btn-red rounded-full font-semibold flex items-center gap-2" style={{ backgroundColor: '#bf0403' }}>
+                  <Phone size={15} />
+                  0497 068 349
+                </Button>
+              </a>
+              <Link to="/contact">
+                <Button variant="outline" className="rounded-full font-semibold border-[#bf0403] text-[#bf0403] hover:bg-[#bf0403] hover:text-white">
+                  Send an Enquiry
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -100,6 +119,25 @@ export default function AboutUsPage() {
                 <p className="text-gray-500 text-sm">{val.desc}</p>
               </div>
             ))}
+          </div>
+          {/* CTA below values */}
+          <div className="mt-16 p-8 bg-white rounded-xl border border-gray-100 text-center">
+            <p className="text-gray-600 text-base leading-relaxed max-w-2xl mx-auto">
+              Not sure what bin you need or whether an item is allowed? Call us before loading and we'll point you in the right direction.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <a href="tel:0497068349">
+                <Button className="btn-red rounded-full font-semibold flex items-center gap-2" style={{ backgroundColor: '#bf0403' }}>
+                  <Phone size={15} />
+                  0497 068 349
+                </Button>
+              </a>
+              <Link to="/contact">
+                <Button variant="outline" className="rounded-full font-semibold border-[#bf0403] text-[#bf0403] hover:bg-[#bf0403] hover:text-white">
+                  Send an Enquiry
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

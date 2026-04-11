@@ -1,5 +1,7 @@
 import React from "react";
-import { MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 
 const towns = [
@@ -13,6 +15,7 @@ const towns = [
   "Pimba",
   "Woomera",
   "Hawker",
+  "+More",
 ];
 
 export default function DeliveryAreaPage() {
@@ -86,6 +89,16 @@ export default function DeliveryAreaPage() {
                 >
                   <span>0497 068 349</span>
                 </a>
+                <p className="text-sm text-gray-500 mt-4">
+                  Not sure what bin you need or whether an item is allowed? Call us before loading and we'll point you in the right direction.
+                </p>
+                <div className="mt-4">
+                  <Link to="/contact">
+                    <Button variant="outline" className="rounded-full font-semibold text-sm border-[#bf0403] text-[#bf0403] hover:bg-[#bf0403] hover:text-white">
+                      Send an Enquiry
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
