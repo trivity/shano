@@ -1,5 +1,7 @@
 import React from "react";
-import { Heart, Leaf, Clock, Shield, Users, ThumbsUp } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Heart, Leaf, Clock, Shield, Users, ThumbsUp, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import SEO from "@/components/SEO";
 
 const values = [
