@@ -1,0 +1,41 @@
+{
+  "summary": "Full frontend regression sweep across all 7 pages of Shano's Skips after refactor. ALL tests passed with 0 unexpected console errors. Verified routes, nav, refactored HomePage composition, GHL iframe replacement on Contact, footer, and mobile responsive behaviour.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "passed_tests": [
+    "All 7 routes load without runtime errors (/, /skip-bin-sizes, /waste-guide, /delivery-area, /about, /faq, /contact) with correct page titles",
+    "Header navigation: every nav-link-* click routes to correct path",
+    "HomePage hero CTA: data-testid='hero-quote-btn' present, text='Get a Quote', href='/contact'",
+    "HomePage section ordering: bins-teaser-section (y=1166) appears VISUALLY ABOVE services-section (y=2200)",
+    "HomePage renders hero-image, 4 bin teaser cards (bin-teaser-2/3/4/6), 8 service cards, bins-teaser-section, services-section",
+    "Skip Bin Sizes page: 4 skip-bin images render and 3 'Get a Quote' /contact CTAs present",
+    "Waste Guide page: waste-allowed-list and waste-not-allowed-list both render",
+    "Delivery Area page: Google Maps iframe renders, no runtime errors",
+    "About Us page: loads correctly, no runtime errors (refactor import fix verified)",
+    "FAQ page: 6 accordion triggers detected, first item expands (aria-expanded=true)",
+    "Contact page: data-testid='ghl-contact-iframe' present with correct src starting 'https://link.simplifyyourbusiness.au/widget/form/zOI9pRb8CX8RmEcTTMzd'; contact-info-phone/email/facebook all render",
+    "Footer (data-testid='footer'), scroll-to-top-btn, footer-facebook-link render on all 7 pages",
+    "Mobile (375x812): mobile-menu-toggle opens mobile-menu, mobile-nav-link-skip-bin-sizes navigates correctly",
+    "0 console errors (excluding expected GHL Cloudflare 403 which were filtered)"
+  ],
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Code is well-structured after refactor. Section components in /components/sections/home/ and /sections/waste/ are cleanly composed in HomePage.js and WasteGuidePage.js.",
+    "Contact page correctly loads GHL form_embed.js once via useEffect with idempotent guard; iframe attributes are preserved exactly.",
+    "All data-testids preserved across the refactor — testability is intact."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Regression sweep clean. Backend was skipped per request (Contact form now uses GHL iframe, /api/contact endpoint no longer used by UI). GHL iframe content cannot be tested in headless due to Cloudflare 403 — only verify the iframe element + src attribute. All 7 routes, navigation, refactored sections, mobile menu, and footer verified working."
+}
