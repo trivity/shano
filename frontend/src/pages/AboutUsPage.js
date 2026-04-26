@@ -42,13 +42,13 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg" data-testid="about-story">
-                Shane's Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way — offering honest advice, fair pricing, and a helping hand when you need it.
+                Shane&rsquo;s Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way &mdash; offering honest advice, fair pricing, and a helping hand when you need it.
               </p>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
-                Whether you're tackling a home clean-up, renovation, or clearing a deceased estate, we make the process simple and stress-free. Our skip bins come in a range of sizes and feature easy-access walk-in doors for added convenience. We also take a responsible approach to waste disposal, with a strong focus on sustainability and environmentally friendly practices.
+                Whether you&rsquo;re tackling a home clean-up, renovation, or clearing a deceased estate, we make the process simple and stress-free. Our skip bins come in a range of sizes and feature easy-access walk-in doors for added convenience. We also take a responsible approach to waste disposal, with a strong focus on sustainability and environmentally friendly practices.
               </p>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
-                We offer flexible 5-day skip hire with extensions available if needed, along with affordable pricing and no hidden costs — so you always know exactly what you're getting. We're committed to responsible, eco-friendly waste disposal and are open 7 days a week, providing dependable service with a genuine local touch.
+                We offer flexible 5-day skip hire with extensions available if needed, along with affordable pricing and no hidden costs &mdash; so you always know exactly what you&rsquo;re getting. We&rsquo;re committed to responsible, eco-friendly waste disposal and are open 7 days a week, providing dependable service with a genuine local touch.
               </p>
             </div>
             <div className="relative">
