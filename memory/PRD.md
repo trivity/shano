@@ -42,8 +42,11 @@ Build a multi-page website for Shano's Skips, a skip bin hire business in Port A
 - Contact page: Replaced custom contact form with Go Highlevel inline iframe embed
   (form id `zOI9pRb8CX8RmEcTTMzd`, host `link.simplifyyourbusiness.au`).
   Script `form_embed.js` injected once via `useEffect`. Iframe height set to 660px.
-  Note: GHL host returns Cloudflare bot challenge (403) to headless browsers, so visual
-  verification only possible in a real user browser.
+- Refactored `HomePage.js` and `WasteGuidePage.js` into composed section components
+  in `/app/frontend/src/components/sections/home/` and `/sections/waste/`.
+  HomePage went from 288 → 26 lines; WasteGuidePage went from 220 → 23 lines.
+  All `data-testid`s preserved; zero behavior change.
+- Full frontend regression sweep (testing_agent_v3 iteration_2) — 100% pass, 0 issues.
 
 ## P0 Features Remaining
 None - all core pages and functionality complete
