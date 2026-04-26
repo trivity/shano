@@ -42,7 +42,7 @@ export default function AboutUsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg" data-testid="about-story">
-                Shane&rsquo;s Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way &mdash; offering honest advice, fair pricing, and a helping hand when you need it.
+                Shano&rsquo;s Skips is a locally owned and operated skip bin business, proudly serving the community with reliable, down-to-earth service you can count on. As a trusted family-run company, we believe in doing things the right way &mdash; offering honest advice, fair pricing, and a helping hand when you need it.
               </p>
               <p className="text-gray-600 leading-relaxed text-base lg:text-lg mt-6">
                 Whether you&rsquo;re tackling a home clean-up, renovation, or clearing a deceased estate, we make the process simple and stress-free. Our skip bins come in a range of sizes and feature easy-access walk-in doors for added convenience. We also take a responsible approach to waste disposal, with a strong focus on sustainability and environmentally friendly practices.
