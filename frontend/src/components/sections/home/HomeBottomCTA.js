@@ -7,7 +7,7 @@ export const HomeBottomCTA = () => (
   <section className="py-20 lg:py-28 bg-black text-white">
     <div className="max-w-4xl mx-auto px-6 text-center">
       <h2 className="text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: 'Outfit' }}>
-        Ready to get started?
+        Unsure What Skip You Need?
       </h2>
       <p className="mt-4 text-gray-400 max-w-lg mx-auto">
         Give us a call or visit our contact page. We're open 7 days a week and happy to help with any questions.
