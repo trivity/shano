@@ -1,41 +1,18 @@
-import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { toast } from "sonner";
-import { Phone, Mail, MapPin, Facebook, Send, Loader2 } from "lucide-react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { Phone, Mail, MapPin, Facebook } from "lucide-react";
 import SEO from "@/components/SEO";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+const GHL_SCRIPT_SRC = "https://link.simplifyyourbusiness.au/js/form_embed.js";
 
 export default function ContactUsPage() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) {
-      toast.error("Please fill in all required fields.");
-      return;
-    }
-    setLoading(true);
-    try {
-      await axios.post(`${API}/contact`, form);
-      toast.success("Message sent! We'll be in touch soon.");
-      setForm({ name: "", email: "", phone: "", message: "" });
-    } catch (err) {
-      toast.error("Something went wrong. Please try calling us instead.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    // Load Go Highlevel form embed script once.
+    if (document.querySelector(`script[src="${GHL_SCRIPT_SRC}"]`)) return;
+    const script = document.createElement("script");
+    script.src = GHL_SCRIPT_SRC;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div data-testid="contact-page" className="pt-20">
@@ -66,81 +43,34 @@ export default function ContactUsPage() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Form */}
-            <div className="lg:col-span-3">
-              <form onSubmit={handleSubmit} data-testid="contact-form" className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      data-testid="contact-name-input"
-                      placeholder="Your name"
-                      value={form.name}
-                      onChange={handleChange}
-                      className="h-11"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      data-testid="contact-email-input"
-                      placeholder="your@email.com"
-                      value={form.email}
-                      onChange={handleChange}
-                      className="h-11"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone (optional)</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    data-testid="contact-phone-input"
-                    placeholder="Your phone number"
-                    value={form.phone}
-                    onChange={handleChange}
-                    className="h-11"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    data-testid="contact-message-input"
-                    placeholder="Tell us about your project or question..."
-                    value={form.message}
-                    onChange={handleChange}
-                    rows={5}
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  data-testid="contact-submit-btn"
-                  disabled={loading}
-                  className="btn-red rounded-full font-semibold px-8 h-11 flex items-center gap-2"
-                  style={{ backgroundColor: loading ? '#999' : '#bf0403' }}
-                >
-                  {loading ? (
-                    <>
-                      <Loader2 size={16} className="animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send size={16} />
-                      Send message
-                    </>
-                  )}
-                </Button>
-              </form>
+            {/* GHL Embedded Form */}
+            <div className="lg:col-span-3" data-testid="contact-form-wrapper">
+              <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: 'Outfit' }}>
+                Send us a message
+              </h2>
+              <p className="text-sm text-gray-500 mb-6">
+                Fill in the form below and we'll get back to you shortly.
+              </p>
+              <div className="rounded-xl border border-gray-100 bg-white overflow-hidden">
+                <iframe
+                  src="https://link.simplifyyourbusiness.au/widget/form/zOI9pRb8CX8RmEcTTMzd"
+                  style={{ width: "100%", height: "660px", border: "none", borderRadius: "3px" }}
+                  id="inline-zOI9pRb8CX8RmEcTTMzd"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="Web-Contact Form"
+                  data-height="597"
+                  data-layout-iframe-id="inline-zOI9pRb8CX8RmEcTTMzd"
+                  data-form-id="zOI9pRb8CX8RmEcTTMzd"
+                  title="Web-Contact Form"
+                  data-testid="ghl-contact-iframe"
+                />
+              </div>
             </div>
 
             {/* Contact Info */}

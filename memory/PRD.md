@@ -39,6 +39,11 @@ Build a multi-page website for Shano's Skips, a skip bin hire business in Port A
 ## Updates (Feb 26, 2026)
 - HomePage Hero CTA: "Call Now" replaced with "Get a Quote" button (red, arrow icon) linking to `/contact`
 - HomePage section reorder: "Choose your size" now appears above "Our services"
+- Contact page: Replaced custom contact form with Go Highlevel inline iframe embed
+  (form id `zOI9pRb8CX8RmEcTTMzd`, host `link.simplifyyourbusiness.au`).
+  Script `form_embed.js` injected once via `useEffect`. Iframe height set to 660px.
+  Note: GHL host returns Cloudflare bot challenge (403) to headless browsers, so visual
+  verification only possible in a real user browser.
 
 ## P0 Features Remaining
 None - all core pages and functionality complete
