@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Phone, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -63,15 +63,15 @@ export default function Navbar() {
 
         {/* CTA + Mobile Toggle */}
         <div className="flex items-center gap-3">
-          <a href="tel:0497068349" data-testid="navbar-phone-btn">
+          <Link to="/contact" data-testid="navbar-enquiry-btn">
             <Button
               className="btn-red rounded-full text-sm font-semibold px-5 hidden sm:flex items-center gap-2"
               style={{ backgroundColor: '#bf0403' }}
             >
-              <Phone size={15} />
-              0497 068 349
+              <Mail size={15} />
+              Send an Enquiry
             </Button>
-          </a>
+          </Link>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             data-testid="mobile-menu-toggle"
@@ -100,15 +100,15 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a href="tel:0497068349" className="mt-3" data-testid="mobile-phone-btn">
+            <Link to="/contact" className="mt-3" data-testid="mobile-enquiry-btn">
               <Button
                 className="w-full btn-red rounded-full font-semibold flex items-center justify-center gap-2"
                 style={{ backgroundColor: '#bf0403' }}
               >
-                <Phone size={15} />
-                Call Now: 0497 068 349
+                <Mail size={15} />
+                Send an Enquiry
               </Button>
-            </a>
+            </Link>
           </nav>
         </div>
       )}
