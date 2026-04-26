@@ -5,10 +5,10 @@ import { ArrowRight } from "lucide-react";
 import SkipBinSVG from "@/components/SkipBinSVG";
 
 const skipSizes = [
-  { size: "2", label: "2m\u00b3", desc: "Perfect for small clean-ups" },
-  { size: "3", label: "3m\u00b3", desc: "Great for bathroom or kitchen renos" },
-  { size: "4", label: "4m\u00b3", desc: "Ideal for medium home projects" },
-  { size: "6", label: "6m\u00b3", desc: "Best for large renovations" },
+  { size: "2", label: "2m\u00b3", desc: "Perfect for small clean-ups", dims: "L: 1.8 m | W: 1.5 m | H: 0.9 m" },
+  { size: "3", label: "3m\u00b3", desc: "Great for bathroom or kitchen renos", dims: "L: 1.8 m | W: 1.5 m | H: 1.2 m" },
+  { size: "4", label: "4m\u00b3", desc: "Ideal for medium home projects", dims: "L: 2.2 m | W: 1.5 m | H: 1.2 m" },
+  { size: "6", label: "6m\u00b3", desc: "Best for large renovations", dims: "L: 3.6 m | W: 1.5 m | H: 1.2 m" },
 ];
 
 export const SkipSizesTeaser = () => (
@@ -33,6 +33,7 @@ export const SkipSizesTeaser = () => (
             <SkipBinSVG size={bin.size} className="w-full max-w-[200px] mx-auto mb-4" />
             <h3 className="text-lg font-bold" style={{ fontFamily: 'Outfit' }}>{bin.label}</h3>
             <p className="text-sm text-gray-500 mt-1">{bin.desc}</p>
+            <p className="text-xs text-gray-400 mt-2 font-medium" data-testid={`bin-dims-${bin.size}`}>{bin.dims}</p>
           </div>
         ))}
       </div>
