@@ -67,16 +67,16 @@ export default function HomePage() {
                 Family-owned waste management made simple. Fair pricing, honest service, and eco-friendly disposal.
               </p>
               <div className="flex flex-wrap gap-4 mt-10">
-                <a href="tel:0497068349" data-testid="hero-call-btn">
+                <Link to="/contact" data-testid="hero-quote-btn">
                   <Button
                     size="lg"
                     className="btn-red rounded-full text-base font-semibold px-8 py-6 flex items-center gap-2"
                     style={{ backgroundColor: '#bf0403' }}
                   >
-                    <Phone size={18} />
-                    Call Now
+                    Get a Quote
+                    <ArrowRight size={18} />
                   </Button>
-                </a>
+                </Link>
                 <Link to="/skip-bin-sizes" data-testid="hero-sizes-btn">
                   <Button
                     size="lg"
@@ -169,48 +169,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section data-testid="services-section" className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="text-[#bf0403] text-sm font-semibold uppercase tracking-wider">What we offer</span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: 'Outfit' }}>
-              Our services
-            </h2>
-            <p className="mt-4 text-gray-500 max-w-xl mx-auto">
-              From skip bins to full estate clean-outs, we handle waste the right way.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger">
-            {services.map((svc) => (
-              <div
-                key={svc.title}
-                data-testid={`service-card-${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
-                className="service-card rounded-xl p-6 bg-white fade-in-up cursor-default"
-              >
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FEE2E2' }}>
-                  <svc.icon size={22} className="text-[#bf0403]" />
-                </div>
-                <h3 className="font-semibold text-base mb-2" style={{ fontFamily: 'Outfit' }}>{svc.title}</h3>
-                <p className="text-gray-500 text-sm">{svc.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Photo Strip */}
-      <section className="py-4 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            <img src="/images/bin-at-site.jpg" alt="Skip bin delivery" className="w-full h-40 md:h-48 object-cover rounded-lg" />
-            <img src="/images/truck-lifting-bin.jpg" alt="Truck lifting skip bin" className="w-full h-40 md:h-48 object-cover rounded-lg" />
-            <img src="/images/bin-near-shed.jpg" alt="Skip bin at residential site" className="w-full h-40 md:h-48 object-cover rounded-lg hidden md:block" />
-            <img src="/images/bin-container-area.jpg" alt="Skip bins at depot" className="w-full h-40 md:h-48 object-cover rounded-lg hidden md:block" />
-          </div>
-        </div>
-      </section>
-
       {/* Skip Bin Sizes Teaser */}
       <section data-testid="bins-teaser-section" className="py-20 lg:py-28 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
@@ -247,6 +205,48 @@ export default function HomePage() {
                 <ArrowRight size={18} />
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Strip */}
+      <section className="py-4 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <img src="/images/bin-at-site.jpg" alt="Skip bin delivery" className="w-full h-40 md:h-48 object-cover rounded-lg" />
+            <img src="/images/truck-lifting-bin.jpg" alt="Truck lifting skip bin" className="w-full h-40 md:h-48 object-cover rounded-lg" />
+            <img src="/images/bin-near-shed.jpg" alt="Skip bin at residential site" className="w-full h-40 md:h-48 object-cover rounded-lg hidden md:block" />
+            <img src="/images/bin-container-area.jpg" alt="Skip bins at depot" className="w-full h-40 md:h-48 object-cover rounded-lg hidden md:block" />
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section data-testid="services-section" className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="text-[#bf0403] text-sm font-semibold uppercase tracking-wider">What we offer</span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight" style={{ fontFamily: 'Outfit' }}>
+              Our services
+            </h2>
+            <p className="mt-4 text-gray-500 max-w-xl mx-auto">
+              From skip bins to full estate clean-outs, we handle waste the right way.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger">
+            {services.map((svc) => (
+              <div
+                key={svc.title}
+                data-testid={`service-card-${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
+                className="service-card rounded-xl p-6 bg-white fade-in-up cursor-default"
+              >
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4" style={{ backgroundColor: '#FEE2E2' }}>
+                  <svc.icon size={22} className="text-[#bf0403]" />
+                </div>
+                <h3 className="font-semibold text-base mb-2" style={{ fontFamily: 'Outfit' }}>{svc.title}</h3>
+                <p className="text-gray-500 text-sm">{svc.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

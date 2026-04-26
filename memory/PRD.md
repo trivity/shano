@@ -36,6 +36,10 @@ Build a multi-page website for Shano's Skips, a skip bin hire business in Port A
 - Heavy bin surcharge notice in Waste Guide
 - Backend validation for contact form (min_length, required fields)
 
+## Updates (Feb 26, 2026)
+- HomePage Hero CTA: "Call Now" replaced with "Get a Quote" button (red, arrow icon) linking to `/contact`
+- HomePage section reorder: "Choose your size" now appears above "Our services"
+
 ## P0 Features Remaining
 None - all core pages and functionality complete
 
@@ -43,16 +47,15 @@ None - all core pages and functionality complete
 - Go Highlevel form integration (when client provides embed code)
 - Booking/enquiry system
 - Admin dashboard for viewing contact submissions
-- SEO meta tags and structured data (FAQ schema, LocalBusiness schema)
 
 ## P2 Features (Backlog)
 - Blog/news section
 - Testimonials/reviews section
 - Online payment integration
 - Skip bin availability checker
+- Refactor large pages (HomePage.js, WasteGuidePage.js) into smaller components
 
 ## Next Tasks
-- Add SEO meta tags and Open Graph data for each page
-- Implement FAQ and LocalBusiness structured data (JSON-LD)
 - Add Go Highlevel form when embed code is provided
+- Run full testing_agent_v3 sweep across all pages for any layout regressions
 - Consider adding a booking/enquiry system
