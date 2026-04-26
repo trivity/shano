@@ -69,6 +69,12 @@ export const AcceptedDeniedLists = () => (
               Heavy bins over 1 ton may have additional charges.
             </p>
           </div>
+          <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-2">
+            <AlertTriangle size={16} className="text-amber-600 mt-0.5 shrink-0" />
+            <p className="text-xs text-amber-800">
+              Animal waste must be bagged, please, for our workers' health and safety reasons.
+            </p>
+          </div>
         </div>
       </div>
 
