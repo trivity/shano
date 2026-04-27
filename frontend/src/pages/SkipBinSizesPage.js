@@ -11,6 +11,7 @@ const bins = [
     size: "2",
     label: "2m\u00b3",
     subtitle: "Small Skip",
+    dims: "L: 1.8 m | W: 1.5 m | H: 0.9 m",
     desc: "Perfect for small household clean-ups, garden tidy-ups, or a single room renovation. Compact enough to fit in tight spaces.",
     ideal: ["Small garden clean-ups", "Single room declutter", "Minor bathroom reno"],
   },
@@ -18,6 +19,7 @@ const bins = [
     size: "3",
     label: "3m\u00b3",
     subtitle: "Medium Skip",
+    dims: "L: 1.8 m | W: 1.5 m | H: 1.2 m",
     desc: "Great for kitchen or bathroom renovations, garage clean-outs, or medium-sized projects. A popular choice for homeowners.",
     ideal: ["Kitchen/bathroom reno", "Garage clean-out", "Moving house waste"],
   },
@@ -25,6 +27,7 @@ const bins = [
     size: "4",
     label: "4m\u00b3",
     subtitle: "Large Skip",
+    dims: "L: 2.2 m | W: 1.5 m | H: 1.2 m",
     desc: "Ideal for larger home renovations, multiple room clean-outs, or commercial fit-outs. Handles heavier loads with ease.",
     ideal: ["Large home renovation", "Office fit-out", "Multiple room clear-out"],
   },
@@ -32,6 +35,7 @@ const bins = [
     size: "6",
     label: "6m\u00b3",
     subtitle: "Extra Large Skip",
+    dims: "L: 3.6 m | W: 1.5 m | H: 1.2 m",
     desc: "Best for major renovations, construction projects, deceased estate clean-outs, or large commercial jobs.",
     ideal: ["Major renovation", "Construction site", "Deceased estate clean-out"],
   },
@@ -76,8 +80,14 @@ export default function SkipBinSizesPage() {
                 <CardContent className="p-0">
                   <div className="flex flex-col sm:flex-row">
                     {/* SVG Side */}
-                    <div className="sm:w-2/5 bg-gray-50 flex items-center justify-center p-8">
+                    <div className="sm:w-2/5 bg-gray-50 flex flex-col items-center justify-center p-8">
                       <SkipBinSVG size={bin.size} className="w-full max-w-[220px]" />
+                      <p
+                        data-testid={`bin-dims-${bin.size}`}
+                        className="mt-4 text-xs font-semibold text-gray-600 text-center tracking-wide"
+                      >
+                        {bin.dims}
+                      </p>
                     </div>
                     {/* Info Side */}
                     <div className="sm:w-3/5 p-6 lg:p-8 flex flex-col justify-between">
