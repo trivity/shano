@@ -3,7 +3,6 @@ import SEO from "@/components/SEO";
 import { WasteHeader } from "@/components/sections/waste/WasteHeader";
 import { AcceptedDeniedLists } from "@/components/sections/waste/AcceptedDeniedLists";
 import { WasteTypesGrid } from "@/components/sections/waste/WasteTypesGrid";
-import { GeneralWasteNote } from "@/components/sections/waste/GeneralWasteNote";
 
 export default function WasteGuidePage() {
   return (
@@ -16,7 +15,6 @@ export default function WasteGuidePage() {
       <WasteHeader />
       <AcceptedDeniedLists />
       <WasteTypesGrid />
-      <GeneralWasteNote />
     </div>
   );
 }

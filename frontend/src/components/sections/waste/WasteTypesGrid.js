@@ -1,11 +1,12 @@
 import React from "react";
-import { Trash2, Leaf, Recycle, Refrigerator, Monitor } from "lucide-react";
+import { Trash2, Leaf, Recycle, Refrigerator, Monitor, AlertTriangle } from "lucide-react";
 
 const wasteTypes = [
   {
     icon: Trash2,
     title: "General Waste",
     desc: "Best for household clean-ups, furniture, toys, clothing, cardboard and general rubbish. Do not overfill above the rim.",
+    warning: "Animal waste must be bagged, please, for our workers' health and safety reasons.",
     color: "#DCFCE7",
     iconColor: "text-green-600",
   },
@@ -60,6 +61,12 @@ export const WasteTypesGrid = () => (
             </div>
             <h3 className="font-bold text-base mb-3" style={{ fontFamily: 'Outfit' }}>{wt.title}</h3>
             <p className="text-gray-500 text-sm leading-relaxed">{wt.desc}</p>
+            {wt.warning && (
+              <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-2">
+                <AlertTriangle size={16} className="text-amber-600 mt-0.5 shrink-0" />
+                <p className="text-xs text-amber-800">{wt.warning}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
