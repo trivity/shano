@@ -76,14 +76,26 @@ export const HomeHero = () => (
               <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#bf0403]" />
             ))}
           </div>
-          {/* Main hero image */}
+          {/* Main hero image — wrapped to prevent right-click / open in new tab */}
           <div className="relative z-10 w-full max-w-lg">
-            <img
-              src="/hero-bin.png"
-              alt="Shano's Skips - Skip Bin"
-              className="w-full h-auto drop-shadow-xl rounded-lg"
-              data-testid="hero-image"
-            />
+            <div className="relative">
+              <img
+                src="/hero-bin.png"
+                alt="Shano's Skips - Skip Bin"
+                className="w-full h-auto drop-shadow-xl rounded-lg select-none pointer-events-none"
+                draggable={false}
+                onContextMenu={(e) => e.preventDefault()}
+                style={{ WebkitUserDrag: 'none' }}
+                data-testid="hero-image"
+              />
+              <span
+                aria-hidden="true"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
+                className="absolute inset-0 z-10"
+                style={{ backgroundColor: 'transparent' }}
+              />
+            </div>
             {/* Size badge */}
             <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-black text-white px-5 py-2 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg" style={{ fontFamily: 'Outfit' }}>
               <span>2m&#179; &ndash; 6m&#179; available</span>
