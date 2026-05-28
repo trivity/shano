@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const SITE_NAME = "Shano's Skips";
-const BASE_URL = "https://shanosskips.com.au";
+const BASE_URL = "https://www.shanosskips.com";
 
 export default function SEO({ title, description, path = "/", children }) {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} | Skip Bin Hire Port Augusta SA`;

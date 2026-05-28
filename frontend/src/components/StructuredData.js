@@ -6,7 +6,7 @@ const localBusiness = {
   "@type": "LocalBusiness",
   "name": "Shano's Skips",
   "description": "Locally owned and operated skip bin hire business serving Port Augusta and surrounding areas in South Australia.",
-  "url": "https://shanosskips.com.au",
+  "url": "https://www.shanosskips.com",
   "telephone": "+61497068349",
   "email": "shanosskips@outlook.com",
   "address": {

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shanosskips.com.au/sitemap.xml
+Sitemap: https://www.shanosskips.com/sitemap.xml
