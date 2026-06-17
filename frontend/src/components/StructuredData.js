@@ -8,7 +8,7 @@ const localBusiness = {
   "description": "Locally owned and operated skip bin hire business serving Port Augusta and surrounding areas in South Australia.",
   "url": "https://www.shanosskips.com",
   "telephone": "+61497068349",
-  "email": "shanosskips@outlook.com",
+  "email": "admin@shanosskips.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "3 Osborne St",

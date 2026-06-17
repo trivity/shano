@@ -92,7 +92,7 @@ export default function ContactUsPage() {
                     </div>
                   </a>
                   <a
-                    href="mailto:shanosskips@outlook.com"
+                    href="mailto:admin@shanosskips.com"
                     data-testid="contact-info-email"
                     className="flex items-center gap-4 text-gray-700 hover:text-[#bf0403] transition-colors"
                   >
@@ -101,7 +101,7 @@ export default function ContactUsPage() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Email</p>
-                      <p className="font-medium text-sm">shanosskips@outlook.com</p>
+                      <p className="font-medium text-sm">admin@shanosskips.com</p>
                     </div>
                   </a>
                   <div className="flex items-center gap-4 text-gray-700">
