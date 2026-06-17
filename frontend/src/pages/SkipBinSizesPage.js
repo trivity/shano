@@ -99,10 +99,12 @@ export default function SkipBinSizesPage() {
                           </span>
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed mb-4">{bin.desc}</p>
-                        <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                          <DoorOpen size={16} className="text-[#bf0403]" />
-                          <span>Easy-access walk-in door included</span>
-                        </div>
+                        {bin.size !== "2" && (
+                          <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                            <DoorOpen size={16} className="text-[#bf0403]" />
+                            <span>Easy-access walk-in door included</span>
+                          </div>
+                        )}
                         <div className="space-y-2">
                           <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Ideal for</p>
                           <ul className="space-y-1">
@@ -173,7 +175,7 @@ export default function SkipBinSizesPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-2xl sm:text-3xl font-bold mb-3" style={{ fontFamily: 'Outfit' }}>Flexible hire terms</h3>
           <p className="text-gray-500">
-            We offer flexible 5-day skip hire with extensions available if needed. No hidden costs - you always know exactly what you're getting.
+            We offer flexible 5-day skip hire with extensions available if needed. No hidden costs &mdash; you always know exactly what you&rsquo;re getting.
           </p>
           <div className="mt-6">
             <Link to="/contact" data-testid="sizes-contact-link">

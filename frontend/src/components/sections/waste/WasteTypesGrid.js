@@ -1,5 +1,5 @@
 import React from "react";
-import { Trash2, Leaf, Recycle, Refrigerator, Monitor, AlertTriangle } from "lucide-react";
+import { Trash2, Leaf, Refrigerator, Monitor, AlertTriangle } from "lucide-react";
 
 const wasteTypes = [
   {
@@ -18,16 +18,9 @@ const wasteTypes = [
     iconColor: "text-green-600",
   },
   {
-    icon: Recycle,
-    title: "Scrap Metal",
-    desc: "Scrap metal can be placed on top of the load for sorting. Dedicated scrap metal bins may also be available.",
-    color: "#DCFCE7",
-    iconColor: "text-green-600",
-  },
-  {
     icon: Refrigerator,
     title: "White Goods & Extra Fee Items",
-    desc: "Items like fridges, freezers, tyres, mattresses, batteries and air conditioners may have extra recycling or disposal charges. Contact us first.",
+    desc: "White goods are larger household appliances that are no longer needed or working. Items like fridges, washing machines, dishwashers, microwaves, air conditioners.",
     color: "#DCFCE7",
     iconColor: "text-green-600",
   },

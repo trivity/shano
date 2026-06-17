@@ -8,12 +8,12 @@ const allowed = [
   "Renovation & building rubble",
   "Timber & wood",
   "Metal & steel",
-  "Green waste (on top of load)",
-  "Furniture & mattresses (beside/on top)",
+  "Green waste",
+  "Furniture & mattresses",
   "Cardboard & paper",
   "Soil & dirt",
   "Bricks & concrete",
-  "White goods (collected separately)",
+  "White goods",
 ];
 
 const notAllowed = [
